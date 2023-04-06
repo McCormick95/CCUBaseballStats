@@ -45,6 +45,7 @@ namespace MovieApi.Repository{
            foreach(Movie m in movies){
                 if(m.Name.Equals(name)){
                     movies.Remove(m);
+                    return;
                 }
             }
         }
