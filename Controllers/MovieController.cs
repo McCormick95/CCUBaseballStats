@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using MovieApi.Models;
+using MovieApi.Services;
 
 namespace MovieApi.Controllers;
 
@@ -9,24 +10,27 @@ public class MovieController : ControllerBase
 {
     private static readonly List<Movie> movies = new List<Movie>(10)
     {
-        new Movie {Name="Citizen Kane", Genre="Drama", Year= 1942},
-        new Movie {Name="The Wizard of Oz", Genre="Fantasy", Year= 1939},
-        new Movie {Name="The Godfather", Genre="Crime", Year= 1972}
+        new Movie {Name="Citizen Smith", Genre="Drama", Year= 1942},
+        new Movie {Name="The Warlock of Oz", Genre="Fantasy", Year= 1939},
+        new Movie {Name="The Grandmother", Genre="Crime", Year= 1972}
 
     };
 
     private readonly ILogger<MovieController> _logger;
+    private IMovieService _service; 
 
-    public MovieController(ILogger<MovieController> logger)
+    public MovieController(ILogger<MovieController> logger, IMovieService service)
     {
         _logger = logger;
+        _service = service;
     }
 
     [HttpGet]
     public IActionResult GetMovies()
     {
-        if(movies != null)
-            return Ok(movies);
+        IEnumerable<Movie> list = _service.GetMovies();
+        if(list != null)
+            return Ok(list);
         else 
             return BadRequest();
     }
@@ -34,7 +38,7 @@ public class MovieController : ControllerBase
     [HttpGet("{name}", Name="GetMovie")]
     public IActionResult GetMovieByName(string name)
     {
-       foreach(Movie m in movies){
+        foreach(Movie m in movies){
            if(m.Name.Equals(name))
              return Ok(m);
         }
