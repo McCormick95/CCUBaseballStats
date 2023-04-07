@@ -38,31 +38,50 @@ namespace MovieApi.Repository{
                 newList.Add(m);
             }
 
-
+            results.Close();
             return newList;
             //return movies;
         }
 
         public Movie GetMovieByName(string name){
-            foreach(Movie m in movies){
-                if(m.Name.Equals(name))
-                    return m;
+            var statement = "select * from Movies where Name = @newName";
+            var command = new MySqlCommand(statement, _connection);
+            command.Parameters.AddWithValue("@newName", name);
+
+            var results = command.ExecuteReader();
+            Movie m = null;
+            if(results.Read()){
+                m = new Movie{
+                    Name = (string)results[1],
+                    Genre = (string)results[3],
+                    Year = (int)results[2]
+                };
             }
-            return null;
+
+            results.Close();
+            return m;
         }
 
         public void InsertMovie(Movie m){
-            movies.Add(m);
+            var statement = "insert into Movies (Name, Year, Genre) Values(@n, @y, @g)";
+            var command = new MySqlCommand(statement,_connection);
+            command.Parameters.AddWithValue("@n", m.Name);
+            command.Parameters.AddWithValue("@y", m.Year);
+            command.Parameters.AddWithValue("@g", m.Genre);
+
+            int result = command.ExecuteNonQuery();
+            Console.WriteLine(result);
         }
 
         public void UpdateMovie(string name, Movie movieIn){
-            foreach(Movie m in movies){
-                if(m.Name.Equals(name)){
-                    m.Name=movieIn.Name;
-                    m.Genre=movieIn.Genre;
-                    m.Year=movieIn.Year;
-                }
-            };
+            var statement = "update Movies set Name=@newName, Year=@newYear, Genre=@newGenre where Name=@updateName";
+            var command = new MySqlCommand(statement, _connection);
+            command.Parameters.AddWithValue("@newName", movieIn.Name);
+            command.Parameters.AddWithValue("@newYear", movieIn.Year);
+            command.Parameters.AddWithValue("@newGenre", movieIn.Genre);
+            command.Parameters.AddWithValue("@updateName", name);
+
+            int result = command.ExecuteNonQuery();
         }
 
         public void DeleteMovie(string name){
