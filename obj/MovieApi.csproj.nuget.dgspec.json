@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/ryanmccormick_95/csci330-repo/MovieApi/MovieApi.csproj": {}
+    "C:\\Users\\ryanm\\source1\\repo\\MovieAPIProject\\MovieApi\\MovieApi.csproj": {}
   },
   "projects": {
-    "/home/ryanmccormick_95/csci330-repo/MovieApi/MovieApi.csproj": {
+    "C:\\Users\\ryanm\\source1\\repo\\MovieAPIProject\\MovieApi\\MovieApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/ryanmccormick_95/csci330-repo/MovieApi/MovieApi.csproj",
+        "projectUniqueName": "C:\\Users\\ryanm\\source1\\repo\\MovieAPIProject\\MovieApi\\MovieApi.csproj",
         "projectName": "MovieApi",
-        "projectPath": "/home/ryanmccormick_95/csci330-repo/MovieApi/MovieApi.csproj",
-        "packagesPath": "/home/ryanmccormick_95/.nuget/packages/",
-        "outputPath": "/home/ryanmccormick_95/csci330-repo/MovieApi/obj/",
+        "projectPath": "C:\\Users\\ryanm\\source1\\repo\\MovieAPIProject\\MovieApi\\MovieApi.csproj",
+        "packagesPath": "C:\\Users\\ryanm\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ryanm\\source1\\repo\\MovieAPIProject\\MovieApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/ryanmccormick_95/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\ryanm\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
@@ -70,7 +70,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/7.0.102/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }

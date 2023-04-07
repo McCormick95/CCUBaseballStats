@@ -85,12 +85,11 @@ namespace MovieApi.Repository{
         }
 
         public void DeleteMovie(string name){
-           foreach(Movie m in movies){
-                if(m.Name.Equals(name)){
-                    movies.Remove(m);
-                    return;
-                }
-            }
+           var statement = "delete from Movies where Name = @n";
+           var command = new MySqlCommand(statement, _connection);
+           command.Parameters.AddWithValue("@n", name);
+
+           int result = command.ExecuteNonQuery();
         }
     }
 }
