@@ -2,18 +2,19 @@ using System.Collections.Generic;
 using CCUBaseball.Models;
 
 namespace CCUBaseball.Services{
-    public interface IBattingStats{
-        //public IEnumerable<Player> GetMovies();
+    public interface IBattingStats
+    {
+        public IEnumerable<Player> GetAll();
 
-        //public Player getMovieByName();
+        public IEnumerable<Player> GetPlayerByName(string name);
 
-        //public Player GetMovieByYear();
+        public IEnumerable<Player> GetPlayersBySeason(int season);
 
         //public void CreatePlayer();
 
         //public void UpdatePlayer();
 
         //public void DeletePlayer();
-
+        
     }
 }
