@@ -36,8 +36,23 @@ namespace CCUBaseball.Services{
                     playersBySeason.Add(p);
                 }
             }
-
             return playersBySeason;
+        }
+
+        public decimal AvgTeamBattingAvgBySeason(int s){
+            decimal teamAverage = 0;
+            int playerCount=0;
+
+            IEnumerable<Player> playerList =  _repo.GetAll();
+            
+            foreach(Player p in playerList){
+                if(p.Season==s){
+                   teamAverage += p.BattingAvg; 
+                    playerCount++;
+                }
+            }
+
+            return teamAverage/playerCount;
         }
     }
 }

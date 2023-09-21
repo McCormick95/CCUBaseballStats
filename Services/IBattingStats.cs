@@ -10,6 +10,11 @@ namespace CCUBaseball.Services{
 
         public IEnumerable<Player> GetPlayersBySeason(int season);
 
+        public decimal AvgTeamBattingAvgBySeason(int s);
+
+
+
+        
         //public void CreatePlayer();
 
         //public void UpdatePlayer();

@@ -47,6 +47,18 @@ public class BaseballStatsController : ControllerBase
             return BadRequest();
     }
 
+//double check on if(condition)
+    [HttpGet("{season}", Name="GetAvgTeamBattingAvg")]
+    public IActionResult AvgTeamBattingAvg(int season)
+    {
+       decimal teamAvg =_service.AvgTeamBattingAvgBySeason(season);
+        if(teamAvg != 0)
+            return Ok(teamAvg);
+        else 
+            return BadRequest();
+    }
+
+
     // [HttpPost]
     // public IActionResult CreateMovie(Movie m){
 
