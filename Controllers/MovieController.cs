@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
-using MovieApi.Models;
-using MovieApi.Services;
+using CCUBaseball.Models;
+using CCUBaseball.Services;
 
-namespace MovieApi.Controllers;
+namespace CCUBaseball.Controllers;
 
 [ApiController]
 [Route("[controller]")]

@@ -1,11 +1,11 @@
-using MovieApi.Repository;
-using MovieApi.Services;
+using CCUBaseball.Repository;
+using CCUBaseball.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddSingleton<IMovieService, MovieService>();
-builder.Services.AddSingleton<IMovieRepository, MovieRepository>();
+builder.Services.AddSingleton<IBattingStats, BattingStatsServices>();
+builder.Services.AddSingleton<IStatsRepo, StatsRepo>();
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
