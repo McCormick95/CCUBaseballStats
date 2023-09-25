@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "PhKEnNUvfAF6ae0vRoeOo+UUPILAG99OnGfPjDPRdldv3w4M8iXnYah5HGRQSRotQ783Iy5enjnvkEG06tvp4A==",
+  "dgSpecHash": "S4pRKSqaKhwhQ34l4PYqBUcC8Q+2KO/49xygMU0IOIGepHzAUuJRBGsZXQNq7UmnbKr88UZqrC6kWk/f6zatpA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ryanm\\source1\\repo\\CCUBaseball\\BaseballStatistics\\MovieApi.csproj",
+  "projectFilePath": "C:\\Users\\ryanm\\source1\\repo\\CCUBaseball\\BaseballStatistics\\CCUBaseball.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ryanm\\.nuget\\packages\\google.protobuf\\3.21.9\\google.protobuf.3.21.9.nupkg.sha512",
     "C:\\Users\\ryanm\\.nuget\\packages\\k4os.compression.lz4\\1.2.6\\k4os.compression.lz4.1.2.6.nupkg.sha512",

@@ -27,15 +27,15 @@ public class BaseballStatsController : ControllerBase
             return BadRequest();
     }
 
-    [HttpGet("{name}", Name="GetPlayer")]
-    public IActionResult GetPlayerByName(string name)
-    {
-        IEnumerable<Player> list = _service.GetAll();
-        if(list != null)
-            return Ok(list);
-        else 
-            return BadRequest();
-    }
+    // [HttpGet("{name}", Name="GetPlayer")]
+    // public IActionResult GetPlayerByName(string name)
+    // {
+    //     IEnumerable<Player> list = _service.GetAll();
+    //     if(list != null)
+    //         return Ok(list);
+    //     else 
+    //         return BadRequest();
+    // }
 
     [HttpGet("season/")]
     public IActionResult GetPlayerBySeason(int season)

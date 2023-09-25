@@ -1964,9 +1964,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ryanm\\source1\\repo\\CCUBaseball\\BaseballStatistics\\MovieApi.csproj",
-      "projectName": "MovieApi",
-      "projectPath": "C:\\Users\\ryanm\\source1\\repo\\CCUBaseball\\BaseballStatistics\\MovieApi.csproj",
+      "projectUniqueName": "C:\\Users\\ryanm\\source1\\repo\\CCUBaseball\\BaseballStatistics\\CCUBaseball.csproj",
+      "projectName": "CCUBaseball",
+      "projectPath": "C:\\Users\\ryanm\\source1\\repo\\CCUBaseball\\BaseballStatistics\\CCUBaseball.csproj",
       "packagesPath": "C:\\Users\\ryanm\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\ryanm\\source1\\repo\\CCUBaseball\\BaseballStatistics\\obj\\",
       "projectStyle": "PackageReference",
