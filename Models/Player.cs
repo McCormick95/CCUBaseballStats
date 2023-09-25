@@ -3,7 +3,7 @@ namespace CCUBaseball.Models{
     public class Player{
         public int Season{get; set;}
         public int Number{get; set;}
-        public string Name{get; set;}
+        public string? Name {get; set;}
         public decimal BattingAvg{get; set;}
         public decimal OnBasePlusSlugging{get; set;}
         public int GamesPlayed {get; set;}

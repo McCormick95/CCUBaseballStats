@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ryanm\\source1\\repo\\MovieAPIProject\\MovieApi\\MovieApi.csproj": {}
+    "C:\\Users\\ryanm\\source1\\repo\\CCUBaseball\\BaseballStatistics\\MovieApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ryanm\\source1\\repo\\MovieAPIProject\\MovieApi\\MovieApi.csproj": {
+    "C:\\Users\\ryanm\\source1\\repo\\CCUBaseball\\BaseballStatistics\\MovieApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ryanm\\source1\\repo\\MovieAPIProject\\MovieApi\\MovieApi.csproj",
+        "projectUniqueName": "C:\\Users\\ryanm\\source1\\repo\\CCUBaseball\\BaseballStatistics\\MovieApi.csproj",
         "projectName": "MovieApi",
-        "projectPath": "C:\\Users\\ryanm\\source1\\repo\\MovieAPIProject\\MovieApi\\MovieApi.csproj",
+        "projectPath": "C:\\Users\\ryanm\\source1\\repo\\CCUBaseball\\BaseballStatistics\\MovieApi.csproj",
         "packagesPath": "C:\\Users\\ryanm\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ryanm\\source1\\repo\\MovieAPIProject\\MovieApi\\obj\\",
+        "outputPath": "C:\\Users\\ryanm\\source1\\repo\\CCUBaseball\\BaseballStatistics\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ryanm\\AppData\\Roaming\\NuGet\\NuGet.Config"
