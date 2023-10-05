@@ -7,7 +7,7 @@ namespace CCUBaseball.Repository{
         
         private readonly MySqlConnection _connection;
         public StatsRepo(){
-            string connectionString="server=localhost;userid=csci330user;password=csci330pass;database=ccuStats";
+            string connectionString="server=localhost;userid=csciuser;password=cscipass;database=ccuStats";
             _connection = new MySqlConnection(connectionString);
             _connection.Open();
         }
