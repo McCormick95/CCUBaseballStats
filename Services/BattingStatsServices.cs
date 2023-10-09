@@ -37,17 +37,50 @@ namespace CCUBaseball.Services{
             return playersBySeason;
         }
 
-        public decimal AvgTeamBattingAvgBySeason(int s){
-            decimal teamAverage = 0;
-            int playerCount=0;
-            IEnumerable<Player> playerList =  _repo.GetAll();
-            foreach(Player p in playerList){
-                if(p.Season==s){
-                   teamAverage += p.BattingAvg; 
+        public List<string> AvgTeamBattingAvgBySeason(int season){
+
+            /*
+              IEnumerable<Player> playerList= _repo.GetAll();
+              List<string> seasonList = new();
+              int firstYear = playerList[0].season
+              seasonList.Add(playerList[0].season)
+              foreach(player p in playerList){
+                foreach(string S in seasonList){
+                    if(p.season != S){
+                        seasonList.Add(p.season)
+                    }
+                }
+              }
+
+              List<string> teamBattingAverages = new();
+              foreach(string s in seasonList){
+                int playerCount=0;
+                int teamAvg = 0;
+                foreach(player p in playerList){
+                    if(p.Season == S){
+                        teamAvg += p.battingAvg
+                    }
                     playerCount++;
                 }
+                teamAvg=/playerCount
+                teamBattingAverages.Add("The "+ s + " team had an average team batting average of: " + teamAverage;)
+              }
+            
+            */
+            
+            List<string> teamBattingAverages = new();
+            decimal teamAverage = 0;
+            int playerCount = 0;
+            IEnumerable<Player> playerList =  _repo.GetAll();
+            foreach(Player p in playerList){
+                if(p.Season == season){
+                   teamAverage += p.BattingAvg;  
+                }
+                playerCount++;
             }
-            return teamAverage/playerCount;
+            teamAverage /= playerCount;
+            string returnString = "The "+ season + " team had an average team batting average of: " + teamAverage;
+            return null;
         }
 
         public IEnumerable<Player> GetPlayerByNumber(int num){

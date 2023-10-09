@@ -7,7 +7,7 @@ namespace CCUBaseball.Services{
         public IEnumerable<Player> GetAll();
         public IEnumerable<Player> GetPlayerByName(string name);
         public IEnumerable<Player> GetPlayersBySeason(int s);
-        public decimal AvgTeamBattingAvgBySeason(int s);
+        public List<string> AvgTeamBattingAvgBySeason(int season);
         public IEnumerable<Player> GetPlayerByNumber(int num);
         public List<string> PercentageOfGamesStarted();
 

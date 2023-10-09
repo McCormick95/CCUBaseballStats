@@ -92,11 +92,15 @@ public class BaseballStatsController : ControllerBase
      [HttpGet("teamAvg/{year}", Name="GetAvgTeamBattingAvg")]
     public IActionResult AvgTeamBattingAvg(int season)
     {
-        decimal teamAvg =_service.AvgTeamBattingAvgBySeason(season);
-        if(teamAvg != 0)
-            return Ok(teamAvg);
-        else 
-            return BadRequest();
+        try{
+            List<string> list = _service.AvgTeamBattingAvgBySeason(season);
+            if(list != null)
+                return Ok(list);
+            else 
+                return BadRequest();
+        }catch(Exception ex){
+            return StatusCode(500, "Internal Server Error");
+        }
     } 
 
 }
