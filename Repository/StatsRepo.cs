@@ -103,38 +103,5 @@ namespace CCUBaseball.Repository{
             results.Close();
             return playerCareerStats;
         }
-
-    //     public void InsertMovie(Movie m){
-    //         var statement = "insert into Movies (Name, Year, Genre) Values(@n, @y, @g)";
-    //         var command = new MySqlCommand(statement,_connection);
-    //         command.Parameters.AddWithValue("@n", m.Name);
-    //         command.Parameters.AddWithValue("@y", m.Year);
-    //         command.Parameters.AddWithValue("@g", m.Genre);
-
-    //         int result = command.ExecuteNonQuery();
-    //         Console.WriteLine(result);
-    //     }
-
-    //     public void UpdateMovie(string name, Movie movieIn){
-    //         var statement = "update Movies set Name=@newName, Year=@newYear, Genre=@newGenre where Name=@updateName";
-    //         var command = new MySqlCommand(statement, _connection);
-    //         command.Parameters.AddWithValue("@newName", movieIn.Name);
-    //         command.Parameters.AddWithValue("@newYear", movieIn.Year);
-    //         command.Parameters.AddWithValue("@newGenre", movieIn.Genre);
-    //         command.Parameters.AddWithValue("@updateName", name);
-
-    //         int result = command.ExecuteNonQuery();
-    //     }
-
-    //     public void DeleteMovie(string name){
-    //        var statement = "delete from Movies where Name = @n";
-    //        var command = new MySqlCommand(statement, _connection);
-    //        command.Parameters.AddWithValue("@n", name);
-
-    //        int result = command.ExecuteNonQuery();
-    //     }
-
-
-    // }
     }
 }

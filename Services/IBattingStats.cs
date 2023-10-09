@@ -6,10 +6,10 @@ namespace CCUBaseball.Services{
     {
         public IEnumerable<Player> GetAll();
         public IEnumerable<Player> GetPlayerByName(string name);
-        public IEnumerable<Player> GetPlayersBySeason(int season);
+        public IEnumerable<Player> GetPlayersBySeason(int s);
         public decimal AvgTeamBattingAvgBySeason(int s);
         public IEnumerable<Player> GetPlayerByNumber(int num);
-        public IEnumerable<String> PercentageOfGamesStarted();
+        public List<string> PercentageOfGamesStarted();
 
         
         //public void CreatePlayer();

@@ -31,9 +31,9 @@ public class BaseballStatsController : ControllerBase
         }
     }
 
-     [HttpGet("{name}", Name="GetPlayer")]
-     public IActionResult GetPlayerByName(string name)
-     {
+    [HttpGet("name/{name}", Name="GetPlayer")]
+    public IActionResult GetPlayerByName(string name)
+    {
         try{
             IEnumerable<Player> list = _service.GetPlayerByName(name);
             if(list != null)
@@ -44,10 +44,11 @@ public class BaseballStatsController : ControllerBase
             return StatusCode(500, "Internal Server Error");
         }
     }
-
-     [HttpGet("season/{year}")]
-     public IActionResult GetPlayersBySeason(int season)
-     {
+    
+//Not Working: list is returning empty from BattingStatsServices.cs    
+    [HttpGet("season/{year}")]
+    public IActionResult GetPlayersBySeason(int season)
+    {
         try{
             IEnumerable<Player> list = _service.GetPlayersBySeason(season);
             if(list != null)
@@ -58,16 +59,44 @@ public class BaseballStatsController : ControllerBase
             return StatusCode(500, "Internal Server Error");
         }
      }
+    [HttpGet("player/{number}", Name="GetByNumber")]
+    public IActionResult GetPlayerByNumber(int number)
+    {
+        try{
+            IEnumerable<Player> list = _service.GetPlayerByNumber(number);
+            if(list != null)
+                return Ok(list);
+            else 
+                return BadRequest();
+        }catch(Exception ex){
+            return StatusCode(500, "Internal Server Error");
+        }
+    }
+    
+//double check code in BattingStatsServices, percentages are incorrect!!!
+    [HttpGet("percentage/", Name="PercentageStarted")]
+    public IActionResult GetPercentageOfGamesStarted()
+    {
+        try{
+            List<string> list = _service.PercentageOfGamesStarted();
+            if(list != null)
+                return Ok(list);
+            else 
+                return BadRequest();
+        }catch(Exception ex){
+            return StatusCode(500, "Internal Server Error");
+        }
+    }
 
-// //double check on if(condition)
-//     [HttpGet("{season}", Name="GetAvgTeamBattingAvg")]
-//     public IActionResult AvgTeamBattingAvg(int season)
-//     {
-//        decimal teamAvg =_service.AvgTeamBattingAvgBySeason(season);
-//         if(teamAvg != 0)
-//             return Ok(teamAvg);
-//         else 
-//             return BadRequest();
-//     }
+//not working!!!!
+     [HttpGet("teamAvg/{year}", Name="GetAvgTeamBattingAvg")]
+    public IActionResult AvgTeamBattingAvg(int season)
+    {
+        decimal teamAvg =_service.AvgTeamBattingAvgBySeason(season);
+        if(teamAvg != 0)
+            return Ok(teamAvg);
+        else 
+            return BadRequest();
+    } 
 
 }

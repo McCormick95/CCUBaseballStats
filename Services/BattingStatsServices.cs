@@ -61,35 +61,36 @@ namespace CCUBaseball.Services{
             return playersByNumber; 
         }
 
-        public IEnumerable<Player> AtBatsVsBattingAvg(){
-            return null;
-        }
-
-        public IEnumerable<string> PercentageOfGamesStarted(){
+        public List<string> PercentageOfGamesStarted(){
             decimal tempPercentage;
             string str;
             List<string> playerByPercentage = new();
             IEnumerable<Player> playerList = _repo.GetAll();
             foreach(Player p in playerList){
                 tempPercentage = p.GamesStarted/p.GamesPlayed;
-                str = p.Name + ": " + tempPercentage + " for the " + p.Season + " season.";
+                str = p.Name + " started " + tempPercentage + " of the games they played in for the " + p.Season + " season.";
                 //String Output= "Jon Doe: .123 for the 20XX season."
                 playerByPercentage.Add(str);
             }
             return playerByPercentage;
         }
 
-        public IEnumerable<string> BattingAvgTrendByPlayerName(string name){
-            List<string> player=new();
-            List<Player> tempList=new();
-            IEnumerable<Player> playerList = _repo.GetAll();
-            foreach(Player p in playerList){
-                if(p.Name == name){
-                    tempList.Add(p);
-                }
-            }
-            return null;
-        }
+
+        // public IEnumerable<Player> AtBatsVsBattingAvg(){
+        //     return null;
+        // }
+
+        // public IEnumerable<string> BattingAvgTrendByPlayerName(string name){
+        //     List<string> player=new();
+        //     List<Player> tempList=new();
+        //     IEnumerable<Player> playerList = _repo.GetAll();
+        //     foreach(Player p in playerList){
+        //         if(p.Name == name){
+        //             tempList.Add(p);
+        //         }
+        //     }
+        //     return null;
+        // }
 
     }
 }
