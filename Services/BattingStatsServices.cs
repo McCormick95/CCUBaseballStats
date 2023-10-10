@@ -37,50 +37,32 @@ namespace CCUBaseball.Services{
             return playersBySeason;
         }
 
-        public List<string> AvgTeamBattingAvgBySeason(int season){
+        public List<string> AvgTeamBattingAvgBySeason(){
+            IEnumerable<Player> playerList= _repo.GetAll();
+            List<int> seasonList = new();
 
-            /*
-              IEnumerable<Player> playerList= _repo.GetAll();
-              List<string> seasonList = new();
-              int firstYear = playerList[0].season
-              seasonList.Add(playerList[0].season)
-              foreach(player p in playerList){
-                foreach(string S in seasonList){
-                    if(p.season != S){
-                        seasonList.Add(p.season)
-                    }
-                }
-              }
-
-              List<string> teamBattingAverages = new();
-              foreach(string s in seasonList){
-                int playerCount=0;
-                int teamAvg = 0;
-                foreach(player p in playerList){
-                    if(p.Season == S){
-                        teamAvg += p.battingAvg
-                    }
-                    playerCount++;
-                }
-                teamAvg=/playerCount
-                teamBattingAverages.Add("The "+ s + " team had an average team batting average of: " + teamAverage;)
-              }
-            
-            */
-            
-            List<string> teamBattingAverages = new();
-            decimal teamAverage = 0;
-            int playerCount = 0;
-            IEnumerable<Player> playerList =  _repo.GetAll();
             foreach(Player p in playerList){
-                if(p.Season == season){
-                   teamAverage += p.BattingAvg;  
+                if(!seasonList.Contains(p.Season)){
+                    seasonList.Add(p.Season);
                 }
-                playerCount++;
             }
-            teamAverage /= playerCount;
-            string returnString = "The "+ season + " team had an average team batting average of: " + teamAverage;
-            return null;
+            List<string> teamBattingAverages = new();
+            foreach(int s in seasonList){
+                int playerCount=0;
+                decimal teamAvg = 0;
+                foreach(Player p in playerList){
+                    if(p.Season == s){
+                        teamAvg += p.BattingAvg;
+                        playerCount++;
+                    }
+                }
+                if(playerCount != 0){
+                    teamAvg /= playerCount;
+                }
+
+                teamBattingAverages.Add("The "+ s + " team had an average team batting average of: " + teamAvg.ToString("0.000"));
+            }
+            return teamBattingAverages;
         }
 
         public IEnumerable<Player> GetPlayerByNumber(int num){
@@ -100,9 +82,8 @@ namespace CCUBaseball.Services{
             List<string> playerByPercentage = new();
             IEnumerable<Player> playerList = _repo.GetAll();
             foreach(Player p in playerList){
-                tempPercentage = p.GamesStarted/p.GamesPlayed;
-                str = p.Name + " started " + tempPercentage + " of the games they played in for the " + p.Season + " season.";
-                //String Output= "Jon Doe: .123 for the 20XX season."
+                tempPercentage = 100 * decimal.Divide(p.GamesStarted , p.GamesPlayed);
+                str = p.Name + " started " + tempPercentage.ToString("##0.#") + "% of games of the " + p.Season + " season.";
                 playerByPercentage.Add(str);
             }
             return playerByPercentage;

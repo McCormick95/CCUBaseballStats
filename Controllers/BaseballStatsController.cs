@@ -46,7 +46,7 @@ public class BaseballStatsController : ControllerBase
     }
     
 //Not Working: list is returning empty from BattingStatsServices.cs    
-    [HttpGet("season/{year}")]
+    [HttpGet("season/{season}")]
     public IActionResult GetPlayersBySeason(int season)
     {
         try{
@@ -72,8 +72,6 @@ public class BaseballStatsController : ControllerBase
             return StatusCode(500, "Internal Server Error");
         }
     }
-    
-//double check code in BattingStatsServices, percentages are incorrect!!!
     [HttpGet("percentage/", Name="PercentageStarted")]
     public IActionResult GetPercentageOfGamesStarted()
     {
@@ -87,13 +85,11 @@ public class BaseballStatsController : ControllerBase
             return StatusCode(500, "Internal Server Error");
         }
     }
-
-//not working!!!!
-     [HttpGet("teamAvg/{year}", Name="GetAvgTeamBattingAvg")]
-    public IActionResult AvgTeamBattingAvg(int season)
+    [HttpGet("teamAvg/", Name="GetAvgTeamBattingAvg")]
+    public IActionResult AvgTeamBattingAvg()
     {
         try{
-            List<string> list = _service.AvgTeamBattingAvgBySeason(season);
+            List<string> list = _service.AvgTeamBattingAvgBySeason();
             if(list != null)
                 return Ok(list);
             else 
