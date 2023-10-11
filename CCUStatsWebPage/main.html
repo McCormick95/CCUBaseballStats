@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="Z-UA-Compatible" content="IE=Edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <title>CCU Baseball Batting Stats</title>
+        <link rel="stylesheet" href="css/ccuStats.css">
+    </head>
+    <body class="container-fluid">
+            <div class="row" id="menu">
+                <div class="col-md-5 justify-content-center">
+                    <h1 class="display-3">CCU Baseball Batting Stats</h1>
+                </div>
+                <div class="col-md-3 justify-content-center first-stack">
+                    <button type="button" class="btn btn-outline-light btn-block" onclick="getAll()">Get All Players and Stats</button> 
+                    <button type="button"  class="btn btn-outline-light btn-block" onclick="getPlayersBySeason()">Get Players By Season</button>
+                    <button type="button" class="btn btn-outline-light btn-block" onclick="GetPlayersByName()">Find Player By Name</button>
+                </div>
+                <div class="col-md-3 justify-content-center">
+                    <button type="button" class="btn btn-outline-light btn-block" onclick="GetPlayersByNumber()">Find Player By Number</button>
+                    <button type="button" class="btn btn-outline-light btn-block" onclick="getPercentage()">Games Started/Played</button>
+                    <button type="button" class="btn btn-outline-light btn-block" onclick="getTeamBattingAvg()">Team Batting Avg</button>
+                </div>
+                <!-- <div class="row justify-content-center" id="strings"></div> -->
+            </div>
+            <div style="overflow-x:auto;" class="table-responsive-sm">
+            <br><table class="table table-striped table-bordered table-hover table-light " cellspacing="0" width="100%">
+                    <thead>  
+                        <!-- populated form javascript -->
+                    </thead>
+                    <tbody id="data-output">
+                        <!-- populated form javascript -->
+                    </tbody>
+                </table>
+            </div>
+            <footer class="row" id="footer">
+                <div class="col-md-4"></div>
+                <h4 class="col-md-4 ">CSCI 250 Group 2. &copy; 2023</h4>
+                <div class="col-md-4"></div>
+            </footer>
+        <script src="scripts\baseballScripts.js"></script>
+    </body>
+</html>
